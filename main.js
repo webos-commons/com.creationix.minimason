@@ -1,3 +1,6 @@
+// Based on http://www.chromeexperiments.com/detail/traveling-wavefronts/
+// Dom specific parts abstracted into "platform"
+// Optimized to run on slower hardware like the TouchPad
 Platform = require('./lib/platform')(0, 0);
 Platform.setIcon("res/icon.png");
 Platform.setTitle("Solar Blue Lava");
