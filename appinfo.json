@@ -1,0 +1,10 @@
+{
+  "id": "com.creationix.minimason",
+  "title": "Traveling Wavefronts",
+  "version": "0.0.1",
+  "vendor": "Tim Caswell",
+  "type": "pdk",
+  "main": "main",
+  "uiRevision": 2,
+  "icon": "res/icon.png"
+}

@@ -1,0 +1,3 @@
+[submodule "node_modules"]
+	path = node_modules
+	url = http://github.com/creationix/node-pdk-bin.git

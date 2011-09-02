@@ -1,0 +1,18 @@
+{
+  "author": "Tim Caswell <tim@creationix.com>",
+  "name": "com.creationix.minimason",
+  "description": "webOS client to minimason",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nko2/minimason.git"
+  },
+  "engines": {
+    "node": ">=v0.4.4"
+  },
+  "dependencies": {
+    "sdl": ">=0.1.5",
+    "webgl": ">=0.0.0"
+  },
+  "devDependencies": {}
+}
