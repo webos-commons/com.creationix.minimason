@@ -4,7 +4,12 @@ This is a simple webgl demo ported to node and webOS for fun.
 
 # Building the IPK
 
-First you'll need to grab the binaries.  They are stored in a git submodule
+First you need to clone this git repo to get the source.
+
+    git clone https://github.com/creationix/com.creationix.minimason.git
+    cd com.creationix.minimason
+
+Then you'll need to grab the binaries.  They are stored in a git submodule
 
     git submodule init
     git submodule update
