@@ -3,7 +3,7 @@
 // Optimized to run on slower hardware like the TouchPad
 Platform = require('./lib/platform')(0, 0);
 Platform.setIcon("res/icon.png");
-Platform.setTitle("Solar Blue Lava");
+Platform.setTitle("Traveling Wavefronts");
 gl = Platform.gl;
 
 gl.viewportWidth = Platform.width;
@@ -41,7 +41,7 @@ var shaders = {
     "	sum += texture2D(src_tex, vec2(pixel.x + 2.0*h, pixel.y) ) * 0.12;",
     "	sum += texture2D(src_tex, vec2(pixel.x + 3.0*h, pixel.y) ) * 0.09;",
     "	sum += texture2D(src_tex, vec2(pixel.x + 4.0*h, pixel.y) ) * 0.05;",
-    "    gl_FragColor.xyz = sum.xyz/0.98; // normalize",
+    "    gl_FragColor.xyz = sum.xyz/0.99; // normalize",
     "	gl_FragColor.a = 1.;",
     "}"].join("\n"),
   "shader-fs-blur-vertical": [
@@ -66,7 +66,7 @@ var shaders = {
     "	sum += texture2D(src_tex, vec2(pixel.x, + 2.0*v + pixel.y) ) * 0.12;",
     "	sum += texture2D(src_tex, vec2(pixel.x, + 3.0*v + pixel.y) ) * 0.09;",
     "	sum += texture2D(src_tex, vec2(pixel.x, + 4.0*v + pixel.y) ) * 0.05;",
-    "    gl_FragColor.xyz = sum.xyz/0.98;",
+    "    gl_FragColor.xyz = sum.xyz/0.99;",
     "	gl_FragColor.a = 1.;",
     "}"].join("\n"),
 
@@ -98,7 +98,7 @@ var shaders = {
     "	vec2 rand_noise = texture2D(sampler_noise, zoom_in + vec2(rnd.x, rnd.y)).xy;",
     "	gl_FragColor.x = texture2D(sampler_prev, zoom_in).x + (rand_noise.x-0.5)*0.0025 - 0.002; // decay with error diffusion",
     "	gl_FragColor.x -= (texture2D(sampler_blur, zoom_in + (rand_noise-0.5)*pixelSize).x -",
-    "					  texture2D(sampler_prev, zoom_in + (rand_noise-0.5)*pixelSize)).x*0.054; // reaction-diffusion",
+    "					  texture2D(sampler_prev, zoom_in + (rand_noise-0.5)*pixelSize)).x*0.062; // reaction-diffusion",
     "",
     "	gl_FragColor.a = 1.;",
     "}"].join("\n"),
@@ -198,8 +198,8 @@ var mouseY = 0.5;
 var animation;
 var timer;
 // texture size (must be powers of two, remember 2048x1024 flat could also be a 128x128x128 voxel)
-var sizeX = 512;
-var sizeY = 512; // 2048x1024 flat or 128x128x128 cube
+var sizeX = 256;
+var sizeY = 256; // 2048x1024 flat or 128x128x128 cube
 // viewport size
 var viewX = Platform.width;
 var viewY = Platform.height;
